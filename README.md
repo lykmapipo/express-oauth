@@ -73,6 +73,7 @@ It will be nice, if you open an issue first so that we can know what is going on
 - [refresh-token-with-jwt-authentication-node-js](https://solidgeargroup.com/refresh-token-with-jwt-authentication-node-js)
 - [Github](https://developer.github.com/apps/building-oauth-apps/authorization-options-for-oauth-apps/)
 - [Google](https://developers.google.com/identity/protocols/OAuth2)
+- [an-introduction-to-oauth-2](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2)
 
 
 ## Licence
