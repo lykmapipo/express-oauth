@@ -62,6 +62,7 @@ It will be nice, if you open an issue first so that we can know what is going on
 ## References
 - [oauth.net](https://oauth.net/2/)
 - [oauth-2-simplified](https://aaronparecki.com/oauth-2-simplified/)
+- [oauthbible](http://oauthbible.com/)
 - [expressjs](https://expressjs.com/)
 - [Production Best Practices](https://expressjs.com/en/advanced/best-practice-security.html)
 - [Production Best Practices](https://expressjs.com/en/advanced/best-practice-performance.html)
@@ -70,6 +71,8 @@ It will be nice, if you open an issue first so that we can know what is going on
 - [The Twelve Factors App](https://12factor.net/)
 - [node-oauth2-server](https://github.com/oauthjs/node-oauth2-server)
 - [refresh-token-with-jwt-authentication-node-js](https://solidgeargroup.com/refresh-token-with-jwt-authentication-node-js)
+- [Github](https://developer.github.com/apps/building-oauth-apps/authorization-options-for-oauth-apps/)
+- [Google](https://developers.google.com/identity/protocols/OAuth2)
 
 
 ## Licence
