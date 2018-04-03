@@ -83,6 +83,24 @@ describe('Client', function () {
 
     });
 
+
+    it('should have redirectUris field', function () {
+
+      const redirectUris = Client.schema.tree.redirectUris;
+      const instance = Client.schema.paths.redirectUris.instance;
+
+      expect(instance).to.equal('Array');
+      expect(redirectUris).to.exist;
+      expect(redirectUris).to.be.an('object');
+      expect(redirectUris.type[0]).to.be.a('function');
+      expect(redirectUris.type[0].name).to.be.equal('String');
+      expect(redirectUris.required).to.not.exist;
+      expect(redirectUris.default).to.be.eql([]);
+      expect(redirectUris.searchable).to.not.exist;
+      expect(redirectUris.index).to.not.exist;
+
+    });
+
   });
 
 });
