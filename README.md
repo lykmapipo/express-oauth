@@ -27,7 +27,7 @@ $ npm install --save @lykmapipo/express-oauth @lykmapipo/express-common
 const app = require('@lykmapipo/express-common');
 const oauth = require('@lykmapipo/express-oauth');
 
-app.mount(oauth);
+app.mount(oauth.routers);
 app.start();
 
 ```
