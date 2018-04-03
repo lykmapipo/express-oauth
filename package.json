@@ -13,6 +13,9 @@
     "security",
     "authorize",
     "authenticate",
+    "token",
+    "refresh",
+    "code",
     "jwt",
     "mongodb",
     "mongoose"
