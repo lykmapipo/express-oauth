@@ -101,6 +101,62 @@ describe('Client', function () {
 
     });
 
+
+    it('should have refreshTokenLifetime field', function () {
+
+      const refreshTokenLifetime = Client.schema.tree.refreshTokenLifetime;
+      const instance = Client.schema.paths.refreshTokenLifetime.instance;
+
+      expect(instance).to.be.equal('Number');
+      expect(refreshTokenLifetime).to.exist;
+      expect(refreshTokenLifetime).to.be.an('object');
+      expect(refreshTokenLifetime.type).to.be.a('function');
+      expect(refreshTokenLifetime.type.name).to.be.equal('Number');
+      expect(refreshTokenLifetime.required).to.not.exist;
+      expect(refreshTokenLifetime.default).to.exist;
+      expect(refreshTokenLifetime.searchable).to.be.true;
+      expect(refreshTokenLifetime.index).to.be.true;
+
+    });
+
+    it('should have accessTokenLifetime field', function () {
+
+      const accessTokenLifetime = Client.schema.tree.accessTokenLifetime;
+      const instance = Client.schema.paths.accessTokenLifetime.instance;
+
+      expect(instance).to.be.equal('Number');
+      expect(accessTokenLifetime).to.exist;
+      expect(accessTokenLifetime).to.be.an('object');
+      expect(accessTokenLifetime.type).to.be.a('function');
+      expect(accessTokenLifetime.type.name).to.be.equal('Number');
+      expect(accessTokenLifetime.required).to.not.exist;
+      expect(accessTokenLifetime.default).to.exist;
+      expect(accessTokenLifetime.searchable).to.be.true;
+      expect(accessTokenLifetime.index).to.be.true;
+
+    });
+
+
+    it('should have authorizationCodeLifetime field', function () {
+
+      const authorizationCodeLifetime = Client.schema.tree.authorizationCodeLifetime;
+      const instance =
+        Client.schema.paths.authorizationCodeLifetime.instance;
+
+      expect(instance).to.be.equal('Number');
+      expect(authorizationCodeLifetime).to.exist;
+      expect(authorizationCodeLifetime).to.be.an('object');
+      expect(authorizationCodeLifetime.type).to.be.a('function');
+      expect(authorizationCodeLifetime.type.name)
+        .to.be.equal('Number');
+      expect(authorizationCodeLifetime.required).to.not.exist;
+      expect(authorizationCodeLifetime.default).to.exist;
+      expect(authorizationCodeLifetime.searchable).to.be.true;
+      expect(authorizationCodeLifetime.index).to.be.true;
+
+    });
+
+
   });
 
 });
