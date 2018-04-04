@@ -1,9 +1,10 @@
 {
   "name": "express-oauth",
   "version": "1.0.0",
-  "description": "minimal [oauth](https://oauth.net/2/) implementation for [express](http://expressjs.com/)",
+  "description": "minimal <a href='https://oauth.net/2/'>oauth</a> implementation for <a href=http://expressjs.com/'>express</a>",
   "title": "express OAuth v2",
-  "url": "https://api.github.com/v1",
+  "url": "https://express-oauth.herokuapp.com/v1.0.0",
+  "sampleUrl": "https://express-oauth.herokuapp.com/v1.0.0",
   "template":
   {
     "withCompare": true,

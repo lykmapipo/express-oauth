@@ -23,7 +23,7 @@
   "main": "index.js",
   "scripts": {
     "test": "grunt test",
-    "dev": "BASE_PATH=./examples nodemon examples/app.js"
+    "dev": "BASE_PATH=./examples nodemon ./examples/app.js"
   },
   "repository": {
     "type": "git",
