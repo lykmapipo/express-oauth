@@ -16,7 +16,7 @@ minimal [oauth](https://oauth.net/2/) implementation for [express](http://expres
 
 ## Install
 ```sh
-$ npm install --save @lykmapipo/express-oauth @lykmapipo/express-common
+$ npm install --save @lykmapipo/express-oauth
 ```
 
 ## Usage
