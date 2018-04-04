@@ -1,0 +1,12 @@
+{
+  "name": "express-oauth",
+  "version": "1.0.0",
+  "description": "minimal [oauth](https://oauth.net/2/) implementation for [express](http://expressjs.com/)",
+  "title": "express OAuth v2",
+  "url": "https://api.github.com/v1",
+  "template":
+  {
+    "withCompare": true,
+    "withGenerator": true
+  }
+}
