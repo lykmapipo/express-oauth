@@ -6,6 +6,7 @@ const path = require('path');
 const expect = require('chai').expect;
 const modelsPath = path.join(__dirname, '..', '..', 'lib', 'models');
 
+
 /**declarations*/
 const Client = require(path.join(modelsPath, 'client'));
 

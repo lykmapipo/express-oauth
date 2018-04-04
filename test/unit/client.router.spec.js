@@ -19,6 +19,7 @@ let client = {
   secret: faker.random.uuid()
 };
 
+
 describe('Client HTTP Router', function () {
 
   before(function (done) {
