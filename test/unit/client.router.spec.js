@@ -43,7 +43,6 @@ describe('Client HTTP Router', function () {
         expect(response).to.exist;
 
         const created = response.body;
-        client = created;
 
         expect(created._id).to.exist;
         expect(created.type).to.exist;
@@ -56,6 +55,8 @@ describe('Client HTTP Router', function () {
         expect(created.secret).to.exist;
         expect(created.createdAt).to.exist;
         expect(created.updatedAt).to.exist;
+
+        client = created;
         done(error, response);
 
       });
@@ -95,6 +96,7 @@ describe('Client HTTP Router', function () {
         expect(response).to.exist;
         const found = response.body;
         expect(found._id).to.exist;
+        expect(found._id).to.be.equal(client._id);
         expect(found.type).to.exist;
         expect(found.grants).to.exist;
         expect(found.redirectUris).to.exist;
@@ -128,9 +130,9 @@ describe('Client HTTP Router', function () {
         expect(response).to.exist;
 
         const patched = response.body;
-        client = patched;
 
         expect(patched._id).to.exist;
+        expect(patched._id).to.be.equal(client._id);
         expect(patched.type).to.exist;
         expect(patched.grants).to.exist;
         expect(patched.redirectUris).to.exist;
@@ -142,6 +144,8 @@ describe('Client HTTP Router', function () {
         expect(patched.secret).to.exist;
         expect(patched.createdAt).to.exist;
         expect(patched.updatedAt).to.exist;
+
+        client = patched;
         done(error, response);
 
       });
@@ -165,9 +169,9 @@ describe('Client HTTP Router', function () {
         expect(response).to.exist;
 
         const puted = response.body;
-        client = puted;
 
         expect(puted._id).to.exist;
+        expect(puted._id).to.be.equal(client._id);
         expect(puted.type).to.exist;
         expect(puted.grants).to.exist;
         expect(puted.redirectUris).to.exist;
@@ -179,6 +183,8 @@ describe('Client HTTP Router', function () {
         expect(puted.secret).to.exist;
         expect(puted.createdAt).to.exist;
         expect(puted.updatedAt).to.exist;
+
+        client = puted;
         done(error, response);
 
       });
@@ -196,7 +202,6 @@ describe('Client HTTP Router', function () {
         expect(response).to.exist;
 
         const deleted = response.body;
-        client = deleted;
 
         expect(deleted._id).to.exist;
         expect(deleted._id).to.be.equal(client._id);
@@ -210,6 +215,8 @@ describe('Client HTTP Router', function () {
         expect(deleted.secret).to.exist;
         expect(deleted.createdAt).to.exist;
         expect(deleted.updatedAt).to.exist;
+
+        client = deleted;
         done(error, response);
 
       });
