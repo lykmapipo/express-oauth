@@ -24,9 +24,9 @@ $ npm install --save @lykmapipo/express-oauth
 ```javascript
 'use strict';
 
-const app = require('@lykmapipo/express-oauth');
+const oauth = require('@lykmapipo/express-oauth');
 
-app.start();
+oauth.app.start();
 
 ```
 
