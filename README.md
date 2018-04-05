@@ -24,8 +24,19 @@ $ npm install --save @lykmapipo/express-oauth
 ```javascript
 'use strict';
 
+//ensure mongo uri
+process.env.MONGODB_URI =
+  (process.env.MONGODB_URI || 'mongodb://localhost/express-oauth');
+
+//dependencies
+const path = require('path');
+const mongoose = require('mongoose');
 const oauth = require('@lykmapipo/express-oauth');
 
+//connect to mongoose
+mongoose.connect(process.env.MONGODB_URI);
+
+//fire oauth app
 oauth.app.start();
 
 ```
