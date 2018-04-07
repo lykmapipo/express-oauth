@@ -11,7 +11,7 @@ module.exports = function (grunt) {
   grunt.initConfig({
     apidoc: {
       api: {
-        src: 'lib/routers/',
+        src: 'lib/',
         dest: 'docs/',
         options: {
           debug: true,
