@@ -7,24 +7,65 @@ process.env.MONGODB_URI =
 
 /* dependencies */
 const path = require('path');
+const async = require('async');
 const mongoose = require('mongoose');
-const { app, info } = require(path.join(__dirname, '..'));
+const {
+  User,
+  Client,
+  app,
+  info
+} = require(path.join(__dirname, '..'));
 
 
 /* connect to mongoose */
 mongoose.connect(process.env.MONGODB_URI);
 
 
-/* expose module info */
-app.get('/', function (request, response) {
-  response.status(200);
-  response.json(info);
-});
+function boot() {
+
+  async.waterfall([
+
+    function clearClients(next) {
+      Client.remove(function ( /*error, results*/ ) {
+        next();
+      });
+    },
+
+    function clearUsers(next) {
+      User.remove(function ( /*error, results*/ ) {
+        next();
+      });
+    },
+
+    function seedUsers(next) {
+      const user = User.fake();
+      User.register(user, next);
+    },
+
+    function seedClients(user, next) {
+      const client = Client.fake();
+      client.post(next);
+    }
+
+  ], function (error, results) {
+
+    /* expose module info */
+    app.get('/', function (request, response) {
+      response.status(200);
+      response.json(info);
+    });
 
 
-/* fire the app */
-app.start(function (error, env) {
-  console.log(
-    `visit http://0.0.0.0:${env.PORT}/v${info.version}/clients`
-  );
-});
+    /* fire the app */
+    app.start(function (error, env) {
+      console.log(
+        `visit http://0.0.0.0:${env.PORT}/v${info.version}/clients`
+      );
+    });
+
+  });
+
+}
+
+
+boot();
