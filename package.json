@@ -34,11 +34,13 @@
     "email": "lallyelias87@gmail.com",
     "url": "https://github.com/lykmapipo"
   },
-  "contributors": [{
-    "name": "lykmapipo",
-    "email": "lallyelias87@gmail.com",
-    "url": "https://github.com/lykmapipo"
-  }],
+  "contributors": [
+    {
+      "name": "lykmapipo",
+      "email": "lallyelias87@gmail.com",
+      "url": "https://github.com/lykmapipo"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/lykmapipo/express-oauth/issues",
@@ -46,9 +48,9 @@
   },
   "homepage": "https://github.com/lykmapipo/express-oauth",
   "sandbox": {
-    "users": "https://majifix-service.herokuapp.com/v0.1.0/users",
-    "clients": "https://majifix-service.herokuapp.com/v0.1.0/clients",
-    "tokens": "https://majifix-service.herokuapp.com/v0.1.0/tokens"
+    "users": "https://express-oauth.herokuapp.com/v0.1.0/users",
+    "clients": "https://express-oauth.herokuapp.com/v0.1.0/clients",
+    "tokens": "https://express-oauth.herokuapp.com/v0.1.0/tokens"
   },
   "devDependencies": {
     "chai": "^4.1.2",
