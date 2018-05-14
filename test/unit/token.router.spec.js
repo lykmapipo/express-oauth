@@ -1,7 +1,7 @@
 'use strict';
 
 
-//dependencies
+/* dependencies */
 const path = require('path');
 const request = require('supertest');
 const { expect } = require('chai');
@@ -13,7 +13,7 @@ const {
 } = require(path.join(__dirname, '..', '..'));
 
 
-/**declarations*/
+/* declarations */
 let client = Client.fake();
 let token = Token.fake();
 

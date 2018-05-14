@@ -6,7 +6,7 @@ const path = require('path');
 const { expect } = require('chai');
 
 
-/**declarations*/
+/* declarations */
 const { Client } = require(path.join(__dirname, '..', '..'));
 
 

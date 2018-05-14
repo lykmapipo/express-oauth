@@ -1,14 +1,14 @@
 'use strict';
 
 
-//dependencies
+/* dependencies */
 const path = require('path');
 const request = require('supertest');
 const { expect } = require('chai');
 const { Client, app, info } = require(path.join(__dirname, '..', '..'));
 
 
-/**declarations*/
+/* declarations */
 let client = Client.fake();
 
 describe('Client HTTP Router', function () {
