@@ -7,12 +7,20 @@ process.env.MONGODB_URI =
 //dependencies
 const path = require('path');
 const mongoose = require('mongoose');
-const oauth = require(path.join(__dirname, '..'));
+const { app, info } = require(path.join(__dirname, '..'));
 
 //connect to mongoose
 mongoose.connect(process.env.MONGODB_URI);
 
-//fire the app
-oauth.app.start(function (error, env) {
-  console.log(`visit http://0.0.0.0:${env.PORT}/v1.0.0/clients`);
+/* expose module info */
+app.get('/', function (request, response) {
+  response.status(200);
+  response.json(info);
+});
+
+/* fire the app */
+app.start(function (error, env) {
+  console.log(
+    `visit http://0.0.0.0:${env.PORT}/v${info.version}/clients`
+  );
 });

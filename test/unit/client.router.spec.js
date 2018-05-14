@@ -5,14 +5,11 @@
 const path = require('path');
 const faker = require('faker');
 const request = require('supertest');
-const app = require('@lykmapipo/express-common');
-const expect = require('chai').expect;
-const routersPath = path.join(__dirname, '..', '..', 'lib', 'routers');
+const { expect } = require('chai');
+const { Client, app, info } = require(path.join(__dirname, '..', '..'));
 
 
 /**declarations*/
-const router = require(path.join(routersPath, 'client'));
-app.mount(router);
 let client = {
   type: 'web',
   name: 'Web Client',
@@ -23,17 +20,17 @@ let client = {
 describe('Client HTTP Router', function () {
 
   before(function (done) {
-    router.Model.remove(done);
+    Client.remove(done);
   });
 
   after(function (done) {
-    router.Model.remove(done);
+    Client.remove(done);
   });
 
   it('should handle HTTP POST on /clients', function (done) {
 
     request(app)
-      .post('/v1.0.0/clients')
+      .post(`/v${info.version}/clients`)
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .send(client)
@@ -66,7 +63,7 @@ describe('Client HTTP Router', function () {
   it('should handle HTTP GET on /clients', function (done) {
 
     request(app)
-      .get('/v1.0.0/clients')
+      .get(`/v${info.version}/clients`)
       .set('Accept', 'application/json')
       .expect(200)
       .end(function (error, response) {
@@ -88,7 +85,7 @@ describe('Client HTTP Router', function () {
   it('should handle HTTP GET on /clients/id:', function (done) {
 
     request(app)
-      .get(`/v1.0.0/clients/${client._id}`)
+      .get(`/v${info.version}/clients/${client._id}`)
       .set('Accept', 'application/json')
       .expect(200)
       .end(function (error, response) {
@@ -120,7 +117,7 @@ describe('Client HTTP Router', function () {
     };
 
     request(app)
-      .patch(`/v1.0.0/clients/${client._id}`)
+      .patch(`/v${info.version}/clients/${client._id}`)
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .send(patch)
@@ -159,7 +156,7 @@ describe('Client HTTP Router', function () {
     };
 
     request(app)
-      .put(`/v1.0.0/clients/${client._id}`)
+      .put(`/v${info.version}/clients/${client._id}`)
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .send(put)
@@ -194,7 +191,7 @@ describe('Client HTTP Router', function () {
   it('should handle HTTP DELETE on /clients/:id', function (done) {
 
     request(app)
-      .delete(`/v1.0.0/clients/${client._id}`)
+      .delete(`/v${info.version}/clients/${client._id}`)
       .set('Accept', 'application/json')
       .expect(200)
       .end(function (error, response) {

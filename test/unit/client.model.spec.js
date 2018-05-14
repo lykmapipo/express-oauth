@@ -1,14 +1,13 @@
 'use strict';
 
 
-//dependencies
+/* dependencies */
 const path = require('path');
-const expect = require('chai').expect;
-const modelsPath = path.join(__dirname, '..', '..', 'lib', 'models');
+const { expect } = require('chai');
 
 
 /**declarations*/
-const Client = require(path.join(modelsPath, 'client'));
+const { Client } = require(path.join(__dirname, '..', '..'));
 
 
 describe('Client Schema', function () {

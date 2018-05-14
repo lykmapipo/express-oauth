@@ -34,35 +34,38 @@
     "email": "lallyelias87@gmail.com",
     "url": "https://github.com/lykmapipo"
   },
+  "contributors": [{
+    "name": "lykmapipo",
+    "email": "lallyelias87@gmail.com",
+    "url": "https://github.com/lykmapipo"
+  }],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lykmapipo/express-oauth/issues"
+    "url": "https://github.com/CodeTanzania/majifix-service/issues",
+    "email": "lallyelias87@gmail.com"
   },
-  "homepage": "https://github.com/lykmapipo/express-oauth",
-  "contributors": [
-    {
-      "name": "lykmapipo",
-      "github": "https://github.com/lykmapipo"
-    }
-  ],
+  "homepage": "https://github.com/CodeTanzania/majifix-service",
+  "sandbox": {
+    "url": "https://majifix-service.herokuapp.com/v0.1.0/services"
+  },
   "devDependencies": {
     "chai": "^4.1.2",
     "faker": "^4.1.0",
     "grunt": "^1.0.2",
     "grunt-apidoc": "^0.11.0",
     "grunt-contrib-jshint": "^1.1.0",
-    "grunt-contrib-watch": "^1.0.0",
+    "grunt-contrib-watch": "^1.1.0",
     "grunt-mocha-test": "^0.13.3",
     "jshint-stylish": "^2.2.1",
-    "mocha": "^5.0.5",
-    "nodemon": "^1.17.3",
-    "sinon": "^4.5.0",
+    "mocha": "^5.1.1",
+    "nodemon": "^1.17.4",
+    "sinon": "^5.0.7",
     "sinon-chai": "^3.0.0",
     "sinon-mongoose": "^2.1.1",
-    "supertest": "^3.0.0"
+    "supertest": "^3.1.0"
   },
   "dependencies": {
-    "@lykmapipo/express-common": "^0.5.0",
+    "@lykmapipo/express-common": "^0.5.1",
     "@lykmapipo/express-request-extra": "^0.1.0",
     "@lykmapipo/express-router-extra": "^0.1.2",
     "async": "^2.6.0",
@@ -70,9 +73,9 @@
     "express-oauth-server": "^2.0.0",
     "irina": "^0.3.0",
     "jsonwebtoken": "^8.2.1",
-    "lodash": "^4.17.5",
-    "mongoose": "^5.0.13",
-    "mongoose-rest-actions": "^0.2.0",
+    "lodash": "^4.17.10",
+    "mongoose": "^5.1.0",
+    "mongoose-rest-actions": "^0.10.0",
     "oauth2-server": "^3.0.0"
   },
   "engines": {

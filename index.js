@@ -7,46 +7,76 @@
  * @author lally elias <lallyelias87@mail.com>
  * @since  0.1.0
  * @version 0.1.0
+ * @license MIT
  * @example
- * 
- * const oauth = require('@lykmapipo/express-oauth');
- * 
- * oauth.app.start();
+ *
+ * const { app } = require('@lykmapipo/express-oauth');
+ *
+ * ...
+ *
+ * app.start()
  * 
  */
 
 
-//dependencies
+/* dependencies */
 const path = require('path');
+const _ = require('lodash');
 const app = require('@lykmapipo/express-common');
 
 
-/**import models*/
-const modelsPath = path.join(__dirname, 'lib', 'models');
-const ClientModel = require(path.join(modelsPath, 'client'));
+/* local constants */
+const libPath = path.join(__dirname, 'lib');
 
 
-/**import routers*/
-const routersPath = path.join(__dirname, 'lib', 'routers');
-const ClientRouter = require(path.join(routersPath, 'client'));
+/* declarations */
+const pkg = require(path.join(__dirname, 'package.json'));
+const fields = [
+  'name',
+  'description',
+  'version',
+  'license',
+  'homepage',
+  'repository',
+  'bugs',
+  'sandbox',
+  'contributors'
+];
+const info = _.merge({}, _.pick(pkg, fields));
 
 
-/**export client router & model*/
-Object.defineProperty(exports, 'client', {
-  get() {
-    return { router: ClientRouter, model: ClientModel };
-  }
-});
+/* ensure api version */
+process.env.API_VERSION = (process.env.API_VERSION || info.version);
 
 
-/**export app*/
+/* import models */
+const Client = require(path.join(libPath, 'client.model'));
+
+
+/* import routers */
+const clientRouter = require(path.join(libPath, 'client.router'));
+
+
+/* export package(module) info */
+exports.info = info;
+
+
+/* export models */
+exports.Client = Client;
+
+
+/* export routers */
+exports.clientRouter = clientRouter;
+
+
+/* export app */
 Object.defineProperty(exports, 'app', {
   get() {
 
-    /**TODO bind oauth middlewares authenticate, token, authorize*/
+    /* TODO bind oauth middlewares authenticate, token, authorize */
 
-    /**bind oauth routes*/
-    app.mount(ClientRouter);
+    /* bind oauth routes */
+    app.mount(clientRouter);
 
     return app;
   }
