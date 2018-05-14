@@ -62,11 +62,13 @@ process.env.AUTHORIZATION_CODE_LIFETIME =
 
 /* import models */
 const Client = require(path.join(libPath, 'client.model'));
+const User = require(path.join(libPath, 'user.model'));
 const Token = require(path.join(libPath, 'token.model'));
 
 
 /* import routers */
 const clientRouter = require(path.join(libPath, 'client.router'));
+const userRouter = require(path.join(libPath, 'user.router'));
 const tokenRouter = require(path.join(libPath, 'token.router'));
 
 
@@ -76,6 +78,7 @@ exports.info = info;
 
 /* export models */
 exports.Client = Client;
+exports.User = User;
 exports.Token = Token;
 
 
@@ -92,6 +95,7 @@ Object.defineProperty(exports, 'app', {
 
     /* bind oauth routes */
     app.mount(clientRouter);
+    app.mount(userRouter);
     app.mount(tokenRouter);
 
     return app;
