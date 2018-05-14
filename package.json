@@ -43,12 +43,12 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/CodeTanzania/majifix-service/issues",
+    "url": "https://github.com/lykmapipo/express-oauth/issues",
     "email": "lallyelias87@gmail.com"
   },
-  "homepage": "https://github.com/CodeTanzania/majifix-service",
+  "homepage": "https://github.com/lykmapipo/express-oauth",
   "sandbox": {
-    "url": "https://majifix-service.herokuapp.com/v0.1.0/services"
+    "url": "https://majifix-service.herokuapp.com/v0.1.0/clients"
   },
   "devDependencies": {
     "chai": "^4.1.2",
