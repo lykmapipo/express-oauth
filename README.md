@@ -31,24 +31,24 @@ process.env.MONGODB_URI =
 //dependencies
 const path = require('path');
 const mongoose = require('mongoose');
-const oauth = require('@lykmapipo/express-oauth');
+const { app } = require('@lykmapipo/express-oauth');
 
 //connect to mongoose
 mongoose.connect(process.env.MONGODB_URI);
 
 //fire oauth app
-oauth.app.start();
+app.start();
 
 ```
 
 ```curl
-curl http://0.0.0.0:5000/v1.0.0/oauth/athenticate
-curl http://0.0.0.0:5000/v1.0.0/oauth/authorize
-curl http://0.0.0.0:5000/v1.0.0/oauth/token
 curl http://0.0.0.0:5000/v1.0.0/users
 curl http://0.0.0.0:5000/v1.0.0/clients
 curl http://0.0.0.0:5000/v1.0.0/tokens
-curl http://0.0.0.0:5000/v1.0.0/codes
+curl http://0.0.0.0:5000/v1.0.0/clients/:client/tokens
+curl http://0.0.0.0:5000/v1.0.0/oauth/athenticate
+curl http://0.0.0.0:5000/v1.0.0/oauth/authorize
+curl http://0.0.0.0:5000/v1.0.0/oauth/token
 ```
 
 
