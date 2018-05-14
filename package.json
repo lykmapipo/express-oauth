@@ -34,11 +34,13 @@
     "email": "lallyelias87@gmail.com",
     "url": "https://github.com/lykmapipo"
   },
-  "contributors": [{
-    "name": "lykmapipo",
-    "email": "lallyelias87@gmail.com",
-    "url": "https://github.com/lykmapipo"
-  }],
+  "contributors": [
+    {
+      "name": "lykmapipo",
+      "email": "lallyelias87@gmail.com",
+      "url": "https://github.com/lykmapipo"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/CodeTanzania/majifix-service/issues",
@@ -66,8 +68,6 @@
   },
   "dependencies": {
     "@lykmapipo/express-common": "^0.5.1",
-    "@lykmapipo/express-request-extra": "^0.1.0",
-    "@lykmapipo/express-router-extra": "^0.1.2",
     "async": "^2.6.0",
     "express": "^4.16.3",
     "express-oauth-server": "^2.0.0",

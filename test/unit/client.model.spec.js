@@ -10,7 +10,7 @@ const { expect } = require('chai');
 const { Client } = require(path.join(__dirname, '..', '..'));
 
 
-describe('Client Schema', function () {
+describe('Client Model', function () {
 
   before(function (done) {
     Client.remove(done);

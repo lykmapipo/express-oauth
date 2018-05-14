@@ -49,12 +49,25 @@ const info = _.merge({}, _.pick(pkg, fields));
 process.env.API_VERSION = (process.env.API_VERSION || info.version);
 
 
+/* lifetimes */
+process.env.REFRESH_TOKEN_LIFETIME =
+  (process.env.REFRESH_TOKEN_LIFETIME || (60 * 60 * 24 * 14)); //2 weeks
+
+process.env.ACCESS_TOKEN_LIFETIME =
+  (process.env.ACCESS_TOKEN_LIFETIME || (60 * 60)); // 1 hour
+
+process.env.AUTHORIZATION_CODE_LIFETIME =
+  (process.env.AUTHORIZATION_CODE_LIFETIME || (60 * 5)); // 5 minutes
+
+
 /* import models */
 const Client = require(path.join(libPath, 'client.model'));
+const Token = require(path.join(libPath, 'token.model'));
 
 
 /* import routers */
 const clientRouter = require(path.join(libPath, 'client.router'));
+const tokenRouter = require(path.join(libPath, 'token.router'));
 
 
 /* export package(module) info */
@@ -63,10 +76,12 @@ exports.info = info;
 
 /* export models */
 exports.Client = Client;
+exports.Token = Token;
 
 
 /* export routers */
 exports.clientRouter = clientRouter;
+exports.tokenRouter = tokenRouter;
 
 
 /* export app */
@@ -77,6 +92,7 @@ Object.defineProperty(exports, 'app', {
 
     /* bind oauth routes */
     app.mount(clientRouter);
+    app.mount(tokenRouter);
 
     return app;
   }
