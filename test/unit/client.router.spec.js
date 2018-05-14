@@ -30,6 +30,7 @@ describe('Client HTTP Router', function () {
       .send(client)
       .expect(201)
       .end(function (error, response) {
+
         expect(error).to.not.exist;
         expect(response).to.exist;
 
@@ -61,15 +62,19 @@ describe('Client HTTP Router', function () {
       .set('Accept', 'application/json')
       .expect(200)
       .end(function (error, response) {
+
         expect(error).to.not.exist;
         expect(response).to.exist;
+
         const result = response.body;
+
         expect(result.data).to.exist;
         expect(result.total).to.exist;
         expect(result.limit).to.exist;
         expect(result.skip).to.exist;
         expect(result.page).to.exist;
         expect(result.pages).to.exist;
+
         done(error, response);
 
       });
@@ -83,9 +88,12 @@ describe('Client HTTP Router', function () {
       .set('Accept', 'application/json')
       .expect(200)
       .end(function (error, response) {
+
         expect(error).to.not.exist;
         expect(response).to.exist;
+
         const found = response.body;
+
         expect(found._id).to.exist;
         expect(found._id).to.be.equal(client._id);
         expect(found.type).to.exist;
@@ -98,6 +106,7 @@ describe('Client HTTP Router', function () {
         expect(found.secret).to.exist;
         expect(found.createdAt).to.exist;
         expect(found.updatedAt).to.exist;
+
         done(error, response);
 
       });
@@ -117,6 +126,7 @@ describe('Client HTTP Router', function () {
       .send(patch)
       .expect(200)
       .end(function (error, response) {
+
         expect(error).to.not.exist;
         expect(response).to.exist;
 
@@ -156,6 +166,7 @@ describe('Client HTTP Router', function () {
       .send(put)
       .expect(200)
       .end(function (error, response) {
+
         expect(error).to.not.exist;
         expect(response).to.exist;
 
@@ -189,6 +200,7 @@ describe('Client HTTP Router', function () {
       .set('Accept', 'application/json')
       .expect(200)
       .end(function (error, response) {
+
         expect(error).to.not.exist;
         expect(response).to.exist;
 

@@ -147,7 +147,8 @@ describe('Client Model', function () {
 
   it('should have authorizationCodeLifetime field', function () {
 
-    const authorizationCodeLifetime = Client.schema.tree.authorizationCodeLifetime;
+    const authorizationCodeLifetime =
+      Client.schema.tree.authorizationCodeLifetime;
     const instance =
       Client.schema.paths.authorizationCodeLifetime.instance;
 

@@ -53,6 +53,7 @@ describe('Token HTTP Router', function () {
       .send(token)
       .expect(201)
       .end(function (error, response) {
+
         expect(error).to.not.exist;
         expect(response).to.exist;
 
@@ -83,15 +84,19 @@ describe('Token HTTP Router', function () {
       .set('Accept', 'application/json')
       .expect(200)
       .end(function (error, response) {
+
         expect(error).to.not.exist;
         expect(response).to.exist;
+
         const result = response.body;
+
         expect(result.data).to.exist;
         expect(result.total).to.exist;
         expect(result.limit).to.exist;
         expect(result.skip).to.exist;
         expect(result.page).to.exist;
         expect(result.pages).to.exist;
+
         done(error, response);
 
       });
@@ -105,6 +110,7 @@ describe('Token HTTP Router', function () {
       .set('Accept', 'application/json')
       .expect(200)
       .end(function (error, response) {
+
         expect(error).to.not.exist;
         expect(response).to.exist;
 
@@ -140,6 +146,7 @@ describe('Token HTTP Router', function () {
       .send(patch)
       .expect(200)
       .end(function (error, response) {
+
         expect(error).to.not.exist;
         expect(response).to.exist;
 
@@ -176,6 +183,7 @@ describe('Token HTTP Router', function () {
       .send(put)
       .expect(200)
       .end(function (error, response) {
+
         expect(error).to.not.exist;
         expect(response).to.exist;
 
@@ -206,6 +214,7 @@ describe('Token HTTP Router', function () {
       .set('Accept', 'application/json')
       .expect(200)
       .end(function (error, response) {
+
         expect(error).to.not.exist;
         expect(response).to.exist;
 
