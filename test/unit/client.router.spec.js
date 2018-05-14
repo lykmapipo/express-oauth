@@ -3,19 +3,13 @@
 
 //dependencies
 const path = require('path');
-const faker = require('faker');
 const request = require('supertest');
 const { expect } = require('chai');
 const { Client, app, info } = require(path.join(__dirname, '..', '..'));
 
 
 /**declarations*/
-let client = {
-  type: 'web',
-  name: 'Web Client',
-  secret: faker.random.uuid()
-};
-
+let client = Client.fake();
 
 describe('Client HTTP Router', function () {
 

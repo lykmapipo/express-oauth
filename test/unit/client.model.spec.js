@@ -48,7 +48,7 @@ describe('Client Schema', function () {
     expect(name).to.be.an('object');
     expect(name.type).to.be.a('function');
     expect(name.type.name).to.be.equal('String');
-    expect(name.required).to.not.exist;
+    expect(name.required).to.be.true;
     expect(name.trim).to.be.true;
     expect(name.index).to.be.true;
     expect(name.searchable).to.be.true;
@@ -68,7 +68,7 @@ describe('Client Schema', function () {
     expect(secret.type.name).to.be.equal('String');
     expect(secret.required).to.be.true;
     expect(secret.trim).to.be.true;
-    expect(secret.index).to.not.exist;
+    expect(secret.index).to.be.true;
     expect(secret.searchable).to.not.exist;
 
   });
@@ -104,8 +104,8 @@ describe('Client Schema', function () {
     expect(redirectUris.type[0].name).to.be.equal('String');
     expect(redirectUris.required).to.not.exist;
     expect(redirectUris.default).to.be.eql([]);
-    expect(redirectUris.searchable).to.not.exist;
-    expect(redirectUris.index).to.not.exist;
+    expect(redirectUris.searchable).to.be.true;
+    expect(redirectUris.index).to.be.true;
 
   });
 
