@@ -5,7 +5,11 @@
 const path = require('path');
 const request = require('supertest');
 const { expect } = require('chai');
-const { Client, app, info } = require(path.join(__dirname, '..', '..'));
+const {
+  Client,
+  clientRouter,
+  app,
+} = require(path.join(__dirname, '..', '..'));
 
 
 /* declarations */
@@ -24,7 +28,7 @@ describe('Client HTTP Router', function () {
   it('should handle HTTP POST on /clients', function (done) {
 
     request(app)
-      .post(`/v${info.version}/clients`)
+      .post(`/v${clientRouter.apiVersion}/clients`)
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .send(client)
@@ -58,7 +62,7 @@ describe('Client HTTP Router', function () {
   it('should handle HTTP GET on /clients', function (done) {
 
     request(app)
-      .get(`/v${info.version}/clients`)
+      .get(`/v${clientRouter.apiVersion}/clients`)
       .set('Accept', 'application/json')
       .expect(200)
       .end(function (error, response) {
@@ -84,7 +88,7 @@ describe('Client HTTP Router', function () {
   it('should handle HTTP GET on /clients/id:', function (done) {
 
     request(app)
-      .get(`/v${info.version}/clients/${client._id}`)
+      .get(`/v${clientRouter.apiVersion}/clients/${client._id}`)
       .set('Accept', 'application/json')
       .expect(200)
       .end(function (error, response) {
@@ -120,7 +124,7 @@ describe('Client HTTP Router', function () {
     };
 
     request(app)
-      .patch(`/v${info.version}/clients/${client._id}`)
+      .patch(`/v${clientRouter.apiVersion}/clients/${client._id}`)
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .send(patch)
@@ -160,7 +164,7 @@ describe('Client HTTP Router', function () {
     };
 
     request(app)
-      .put(`/v${info.version}/clients/${client._id}`)
+      .put(`/v${clientRouter.apiVersion}/clients/${client._id}`)
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .send(put)
@@ -196,7 +200,7 @@ describe('Client HTTP Router', function () {
   it('should handle HTTP DELETE on /clients/:id', function (done) {
 
     request(app)
-      .delete(`/v${info.version}/clients/${client._id}`)
+      .delete(`/v${clientRouter.apiVersion}/clients/${client._id}`)
       .set('Accept', 'application/json')
       .expect(200)
       .end(function (error, response) {

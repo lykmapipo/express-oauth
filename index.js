@@ -83,6 +83,7 @@ exports.Token = Token;
 
 
 /* export routers */
+exports.userRouter = userRouter;
 exports.clientRouter = clientRouter;
 exports.tokenRouter = tokenRouter;
 

@@ -42,13 +42,13 @@ app.start();
 ```
 
 ```curl
-curl http://0.0.0.0:5000/v1.0.0/users
-curl http://0.0.0.0:5000/v1.0.0/clients
-curl http://0.0.0.0:5000/v1.0.0/tokens
-curl http://0.0.0.0:5000/v1.0.0/clients/:client/tokens
-curl http://0.0.0.0:5000/v1.0.0/oauth/athenticate
-curl http://0.0.0.0:5000/v1.0.0/oauth/authorize
-curl http://0.0.0.0:5000/v1.0.0/oauth/token
+curl /v1.0.0/users
+curl /v1.0.0/clients
+curl /v1.0.0/tokens
+curl /v1.0.0/clients/:client/tokens
+curl /v1.0.0/oauth/athenticate
+curl /v1.0.0/oauth/authorize
+curl /v1.0.0/oauth/token
 ```
 
 
@@ -83,6 +83,7 @@ It will be nice, if you open an issue first so that we can know what is going on
 - [Github](https://developer.github.com/apps/building-oauth-apps/authorization-options-for-oauth-apps/)
 - [Google](https://developers.google.com/identity/protocols/OAuth2)
 - [an-introduction-to-oauth-2](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2)
+- [ory fosite](https://github.com/ory/fosite)
 
 
 ## Licence

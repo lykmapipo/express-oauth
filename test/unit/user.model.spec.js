@@ -12,14 +12,6 @@ const { User } = require(path.join(__dirname, '..', '..'));
 
 describe('User Model', function () {
 
-  before(function (done) {
-    User.remove(done);
-  });
-
-  after(function (done) {
-    User.remove(done);
-  });
-
   it('should have name field', function () {
 
     const name = User.schema.tree.name;

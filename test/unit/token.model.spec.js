@@ -12,14 +12,6 @@ const { Token } = require(path.join(__dirname, '..', '..'));
 
 describe('Token Model', function () {
 
-  before(function (done) {
-    Token.remove(done);
-  });
-
-  after(function (done) {
-    Token.remove(done);
-  });
-
   it('should have user field', function () {
 
     const user = Token.schema.tree.user;

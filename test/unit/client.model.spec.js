@@ -12,14 +12,6 @@ const { Client } = require(path.join(__dirname, '..', '..'));
 
 describe('Client Model', function () {
 
-  before(function (done) {
-    Client.remove(done);
-  });
-
-  after(function (done) {
-    Client.remove(done);
-  });
-
   it('should have type field', function () {
 
     const type = Client.schema.tree.type;
@@ -30,11 +22,13 @@ describe('Client Model', function () {
     expect(type).to.be.an('object');
     expect(type.type).to.be.a('function');
     expect(type.type.name).to.be.equal('String');
-    expect(type.required).to.not.exist;
-    expect(type.lowercase).to.be.true;
     expect(type.trim).to.be.true;
+    expect(type.lowercase).to.be.true;
+    expect(type.default).to.exist;
+    expect(type.required).to.not.exist;
     expect(type.index).to.be.true;
     expect(type.searchable).to.be.true;
+    expect(type.fake).to.be.true;
 
   });
 
@@ -48,10 +42,11 @@ describe('Client Model', function () {
     expect(name).to.be.an('object');
     expect(name.type).to.be.a('function');
     expect(name.type.name).to.be.equal('String');
-    expect(name.required).to.be.true;
     expect(name.trim).to.be.true;
+    expect(name.required).to.be.true;
     expect(name.index).to.be.true;
     expect(name.searchable).to.be.true;
+    expect(name.fake).to.exist;
 
   });
 
@@ -66,10 +61,11 @@ describe('Client Model', function () {
     expect(secret).to.be.an('object');
     expect(secret.type).to.be.a('function');
     expect(secret.type.name).to.be.equal('String');
-    expect(secret.required).to.be.true;
     expect(secret.trim).to.be.true;
+    expect(secret.required).to.be.true;
     expect(secret.index).to.be.true;
     expect(secret.searchable).to.not.exist;
+    expect(secret.fake).to.exist;
 
   });
 
@@ -85,9 +81,10 @@ describe('Client Model', function () {
     expect(grants.type[0]).to.be.a('function');
     expect(grants.type[0].name).to.be.equal('String');
     expect(grants.required).to.not.exist;
+    expect(grants.index).to.be.true;
     expect(grants.default).to.be.eql([]);
     expect(grants.searchable).to.be.true;
-    expect(grants.index).to.be.true;
+    expect(grants.fake).to.exist;
 
   });
 
@@ -103,9 +100,10 @@ describe('Client Model', function () {
     expect(redirectUris.type[0]).to.be.a('function');
     expect(redirectUris.type[0].name).to.be.equal('String');
     expect(redirectUris.required).to.not.exist;
+    expect(redirectUris.index).to.be.true;
     expect(redirectUris.default).to.be.eql([]);
     expect(redirectUris.searchable).to.be.true;
-    expect(redirectUris.index).to.be.true;
+    expect(redirectUris.fake).to.exist;
 
   });
 
@@ -139,8 +137,9 @@ describe('Client Model', function () {
     expect(accessTokenLifetime.type.name).to.be.equal('Number');
     expect(accessTokenLifetime.required).to.not.exist;
     expect(accessTokenLifetime.default).to.exist;
-    expect(accessTokenLifetime.searchable).to.be.true;
     expect(accessTokenLifetime.index).to.be.true;
+    expect(accessTokenLifetime.searchable).to.be.true;
+    expect(accessTokenLifetime.fake).to.exist;
 
   });
 

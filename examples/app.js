@@ -1,5 +1,6 @@
 'use strict';
 
+
 /* ensure mongo uri */
 process.env.MONGODB_URI =
   (process.env.MONGODB_URI || 'mongodb://localhost/express-oauth');
@@ -14,6 +15,7 @@ const {
   User,
   Client,
   Token,
+  clientRouter,
   app,
   info
 } = require(path.join(__dirname, '..'));
@@ -87,7 +89,7 @@ function boot() {
     /* fire the app */
     app.start(function (error, env) {
       console.log(
-        `visit http://0.0.0.0:${env.PORT}/v${info.version}/clients`
+        `visit http://0.0.0.0:${env.PORT}/v${clientRouter.apiVersion}/clients`
       );
     });
 

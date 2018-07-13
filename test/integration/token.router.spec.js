@@ -8,8 +8,8 @@ const { expect } = require('chai');
 const {
   Client,
   Token,
+  tokenRouter,
   app,
-  info
 } = require(path.join(__dirname, '..', '..'));
 
 
@@ -47,7 +47,7 @@ describe('Token HTTP Router', function () {
   it('should handle HTTP POST on /tokens', function (done) {
 
     request(app)
-      .post(`/v${info.version}/tokens`)
+      .post(`/v${tokenRouter.apiVersion}/tokens`)
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .send(token)
@@ -80,7 +80,7 @@ describe('Token HTTP Router', function () {
   it('should handle HTTP GET on /tokens', function (done) {
 
     request(app)
-      .get(`/v${info.version}/tokens`)
+      .get(`/v${tokenRouter.apiVersion}/tokens`)
       .set('Accept', 'application/json')
       .expect(200)
       .end(function (error, response) {
@@ -106,7 +106,7 @@ describe('Token HTTP Router', function () {
   it('should handle HTTP GET on /tokens/id:', function (done) {
 
     request(app)
-      .get(`/v${info.version}/tokens/${token._id}`)
+      .get(`/v${tokenRouter.apiVersion}/tokens/${token._id}`)
       .set('Accept', 'application/json')
       .expect(200)
       .end(function (error, response) {
@@ -140,7 +140,7 @@ describe('Token HTTP Router', function () {
     };
 
     request(app)
-      .patch(`/v${info.version}/tokens/${token._id}`)
+      .patch(`/v${tokenRouter.apiVersion}/tokens/${token._id}`)
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .send(patch)
@@ -177,7 +177,7 @@ describe('Token HTTP Router', function () {
     };
 
     request(app)
-      .put(`/v${info.version}/tokens/${token._id}`)
+      .put(`/v${tokenRouter.apiVersion}/tokens/${token._id}`)
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .send(put)
@@ -210,7 +210,7 @@ describe('Token HTTP Router', function () {
   it('should handle HTTP DELETE on /tokens/:id', function (done) {
 
     request(app)
-      .delete(`/v${info.version}/tokens/${token._id}`)
+      .delete(`/v${tokenRouter.apiVersion}/tokens/${token._id}`)
       .set('Accept', 'application/json')
       .expect(200)
       .end(function (error, response) {

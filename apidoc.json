@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "minimal <a href='https://oauth.net/2/'>oauth</a> implementation for <a href=http://expressjs.com/'>express</a>",
   "title": "express OAuth v2",
-  "url": "https://express-oauth.herokuapp.com/v1.0.0",
-  "sampleUrl": "https://express-oauth.herokuapp.com/v1.0.0",
+  "url": "https://express-oauth.herokuapp.com/v1",
+  "sampleUrl": "https://express-oauth.herokuapp.com/v1",
   "template":
   {
     "withCompare": true,

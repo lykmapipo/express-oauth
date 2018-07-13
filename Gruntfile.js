@@ -27,6 +27,17 @@ module.exports = function (grunt) {
           timeout: 20000
         },
         src: ['test/**/*.js']
+      },
+      unit: {
+        options: {
+          reporter: 'spec',
+          timeout: 20000
+        },
+        src: [
+          'test/**/*.js',
+          'test/unit/**/*.js',
+          '!test/integration/**/*.js'
+        ]
       }
     },
     jshint: {
@@ -57,6 +68,7 @@ module.exports = function (grunt) {
   //custom tasks
   grunt.registerTask('default', ['jshint', 'mochaTest', 'watch']);
   grunt.registerTask('test', ['jshint', 'mochaTest']);
+  grunt.registerTask('unit', ['jshint', 'mochaTest:unit']);
   grunt.registerTask('doc', ['jshint', 'apidoc:api']);
 
 };

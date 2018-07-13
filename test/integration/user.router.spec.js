@@ -8,8 +8,8 @@ const faker = require('faker');
 const { expect } = require('chai');
 const {
   User,
-  app,
-  info
+  userRouter,
+  app
 } = require(path.join(__dirname, '..', '..'));
 
 
@@ -30,7 +30,7 @@ describe('User HTTP Router', function () {
   it('should handle HTTP POST on /users', function (done) {
 
     request(app)
-      .post(`/v${info.version}/users`)
+      .post(`/v${userRouter.apiVersion}/users`)
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .send(user)
@@ -59,7 +59,7 @@ describe('User HTTP Router', function () {
   it('should handle HTTP GET on /users', function (done) {
 
     request(app)
-      .get(`/v${info.version}/users`)
+      .get(`/v${userRouter.apiVersion}/users`)
       .set('Accept', 'application/json')
       .expect(200)
       .end(function (error, response) {
@@ -85,7 +85,7 @@ describe('User HTTP Router', function () {
   it('should handle HTTP GET on /users/id:', function (done) {
 
     request(app)
-      .get(`/v${info.version}/users/${user._id}`)
+      .get(`/v${userRouter.apiVersion}/users/${user._id}`)
       .set('Accept', 'application/json')
       .expect(200)
       .end(function (error, response) {
@@ -116,7 +116,7 @@ describe('User HTTP Router', function () {
     };
 
     request(app)
-      .patch(`/v${info.version}/users/${user._id}`)
+      .patch(`/v${userRouter.apiVersion}/users/${user._id}`)
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .send(patch)
@@ -149,7 +149,7 @@ describe('User HTTP Router', function () {
     };
 
     request(app)
-      .put(`/v${info.version}/users/${user._id}`)
+      .put(`/v${userRouter.apiVersion}/users/${user._id}`)
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .send(put)
@@ -178,7 +178,7 @@ describe('User HTTP Router', function () {
   it('should handle HTTP DELETE on /users/:id', function (done) {
 
     request(app)
-      .delete(`/v${info.version}/users/${user._id}`)
+      .delete(`/v${userRouter.apiVersion}/users/${user._id}`)
       .set('Accept', 'application/json')
       .expect(200)
       .end(function (error, response) {
