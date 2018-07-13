@@ -42,13 +42,13 @@ app.start();
 ```
 
 ```curl
-curl /v1.0.0/users
-curl /v1.0.0/clients
-curl /v1.0.0/tokens
-curl /v1.0.0/clients/:client/tokens
-curl /v1.0.0/oauth/athenticate
-curl /v1.0.0/oauth/authorize
-curl /v1.0.0/oauth/token
+curl /v1/users
+curl /v1/clients
+curl /v1/tokens
+curl /v1/clients/:client/tokens
+curl /v1/oauth/athenticate
+curl /v1/oauth/authorize
+curl /v1/oauth/token
 ```
 
 
